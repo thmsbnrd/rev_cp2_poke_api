@@ -1,17 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 const Pokemon = ({ pokemon, deletePokemon }) => {
+    const [ pokemonDetails, setPokemonDetails] = useState({})
 
     useEffect(() => {
         Axios.get(`${pokemon.url}`)
-            .then(response => console.log(response.data))
+            .then(response => response.data)
+            .then(data => setPokemonDetails(data))
     }, [])
 
     return (
         <div>name : 
-            <Link to={{pathname:"/pokemon/${pokemon.id}", state: pokemon}}>{pokemon.name}</Link>
+            <Link to={{pathname: `/pokemon/${pokemonDetails.id}`}}>{pokemon.name}</Link>
             <button onClick={() => deletePokemon(pokemon.name)}>Delete</button>
         </div>
     )
