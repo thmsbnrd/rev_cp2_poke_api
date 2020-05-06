@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+import Pokemon from './Pokemon';
+
 class ListOfPokemon extends Component {
     state = {
         pokemons: []
@@ -15,7 +17,10 @@ class ListOfPokemon extends Component {
     render() {
         console.log(this.state.pokemons)
         return (
-            <div>Page List Pokemon</div>
+            <div>
+                <div>Page List Pokemon</div>
+                <Pokemon />
+            </div>
         )
     }
 }
