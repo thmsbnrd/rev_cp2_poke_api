@@ -2,7 +2,7 @@ import React from 'react';
 
 const Pokemon = ({ pokemon, deletePokemon }) => {
     return (
-        <div>name : {pokemon.name}<button onClick={() => deletePokemon()}>Delete</button></div>
+        <div>name : {pokemon.name}<button onClick={() => deletePokemon(pokemon.name)}>Delete</button></div>
     )
 }
 

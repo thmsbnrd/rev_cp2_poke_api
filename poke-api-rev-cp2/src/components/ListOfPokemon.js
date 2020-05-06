@@ -14,8 +14,10 @@ class ListOfPokemon extends Component {
             .then(data => this.setState({ pokemons: data }))
     }
 
-    deletePokemon = () => {
-        console.log('delete')
+    deletePokemon = (name) => {
+        const { pokemons } = this.state;
+        const newArrayPokemon = pokemons.filter(element => element.name !== name)
+        this.setState({pokemons: newArrayPokemon})
     }
 
     render() {
