@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Pokemon extends Component {
-    render() {
-        return (
-            <div>name : </div>
-        )
-    }
+const Pokemon = ({ pokemon, deletePokemon }) => {
+    return (
+        <div>name : {pokemon.name}<button onClick={() => deletePokemon()}>Delete</button></div>
+    )
 }
 
 export default Pokemon;

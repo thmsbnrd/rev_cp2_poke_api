@@ -14,12 +14,16 @@ class ListOfPokemon extends Component {
             .then(data => this.setState({ pokemons: data }))
     }
 
+    deletePokemon = () => {
+        console.log('delete')
+    }
+
     render() {
-        console.log(this.state.pokemons)
+        const { pokemons } = this.state;
         return (
             <div>
                 <div>Page List Pokemon</div>
-                <Pokemon />
+                {pokemons.map(pokemon => <Pokemon pokemon={pokemon} deletePokemon={this.deletePokemon} />)}
             </div>
         )
     }
