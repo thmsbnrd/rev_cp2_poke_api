@@ -13,7 +13,7 @@ const Pokemon = ({ pokemon, deletePokemon }) => {
 
     return (
         <div>name : 
-            <Link to={{pathname: `/pokemon/${pokemonDetails.id}`}}>{pokemon.name}</Link>
+            <Link to={{pathname: `/pokemon/${pokemonDetails.id}`, query: pokemonDetails}}>{pokemon.name}</Link>
             <button onClick={() => deletePokemon(pokemon.name)}>Delete</button>
         </div>
     )
